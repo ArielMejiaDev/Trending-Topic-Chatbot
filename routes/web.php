@@ -14,13 +14,16 @@
 use Thujohn\Twitter\Facades\Twitter;
 
 Route::get('/', function () {
-    //return view('welcome');
-    return Twitter::getTrendsAvailable();
+    return view('welcome');
 });
 
-Route::get('berlin', function () {
-    return Twitter::getTrendsPlace(['id' => '638242']);
-});
+Route::get('q&a', function () {
+    return view('q&a');
+})->name('q&a');
+
+Route::get('conditions', function () {
+    return view('conditions');
+})->name('conditions');
 
 Route::get('webhook', 'WebhookController@index');
 

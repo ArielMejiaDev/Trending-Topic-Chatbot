@@ -81,18 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Twitter Trending Chatbot
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a target="_blank" href="http://m.me/109564767223328">Go to chatbot Messenger</a>
+                    <a href="{{ route('q&a') }}">Q&A</a>
+                    <a href="{{ route('conditions') }}">Conditions</a>
+                    <a href="https://github.com/ArielMejiaDev/Trending-Topic-Chatbot">GitHub</a>
                 </div>
             </div>
         </div>
