@@ -33,9 +33,7 @@ class ChatJob implements ShouldQueue
 
         $locations = (new TwitterApiService)->getCitiesMap();
 
-        $bot->setFallbackText();
-        
-        $bot->setGreetings();
+        $bot->setFallbackText()->setGreetings();
         
         $bot->responseTo('help', function() use($bot){
             $bot->text = 'Hi, How can I help you';

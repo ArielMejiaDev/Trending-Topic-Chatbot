@@ -10,7 +10,7 @@ class FacebookChatbotService
     protected $bot;
     protected $sender;
     protected $receivedText;
-    protected $greetingText = "Hi I am a Twitter Trending Chatbot\nYou can text me any city and I will give you the trending topics\nExample: 'Berlin trends', 'trends of London' or 'From Mexico' \nI support a variety of ways to ask for a trend";
+    protected $greetingText = "👋 You can text me any city and I will give you the trending topics\nExample: 'Madrid trends', 'trends of London' or 'From Mexico' \nI support a variety of ways to ask for a trend";
     protected $greetingsNeedles = ['hi', 'hello', 'good morning', 'good evening', 'good afternoon'];
     protected $fallbackText = 'I´m sorry I didn´t understand the request';
     public $text;
@@ -24,16 +24,16 @@ class FacebookChatbotService
         return $this;
     }
 
-    public function setFallbackText(string $fallbackText = null) 
+    public function setFallbackText(string $fallbackText = null) :FacebookChatbotService
     {
         if ($fallbackText) {
             $this->fallbackText = $fallbackText;
         }
         $this->text = $this->fallbackText;
-        
+        return $this;
     }
 
-    public function setGreetings(string $greetingText = null, $needles = [])
+    public function setGreetings(string $greetingText = null, $needles = []) :FacebookChatbotService
     {
         if ($needles) $this->greetingsNeedles = $needles;
         if ($greetingText) $this->greetingText = $greetingText;
@@ -51,7 +51,7 @@ class FacebookChatbotService
         }
     }
 
-    public function send()
+    public function send() :array
     {
         $message = new Message($this->sender, $this->text);
         return $this->bot->send($message);
