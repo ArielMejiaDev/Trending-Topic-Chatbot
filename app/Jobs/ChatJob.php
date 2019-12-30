@@ -38,6 +38,18 @@ class ChatJob implements ShouldQueue
         $bot->responseTo('help', function() use($bot){
             $bot->text = 'Hi, How can I help you';
         });
+        
+        $bot->responseTo(['thanks', 'thank you'], function() use($bot){
+            $bot->text = '😀 Thanks to you, do you like trend of other city?';
+        });
+        
+        $bot->responseTo(['bye', 'see you', 'no', 'no thanks'], function() use($bot){
+            $bot->text = 'Ok Bye 👋🏽, Thanks for the great talk!';
+        });
+        
+        $bot->responseTo(['author', 'who made you'], function() use($bot){
+            $bot->text = "I was made with ❤️ by Ariel Mejia Dev\nSite: https://arielmejia.dev\nGithub: https://github.com/ArielMejiaDev";
+        });
 
         foreach ($locations as $locationKey => $locationValue) {
 
