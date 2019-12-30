@@ -1,19 +1,19 @@
-# Trending Topic Chatbot
+# 💬 Trending Topic Chatbot
 
 Is a facebook chatboot to get the top 10 topics in all cities around the world.
 
-## Getting Started
+## Getting Started 🎬
 
 ```
 git clone https://github.com/ArielMejiaDev/Trending-Topic-Chatbot.git chatbot
 ```
 
-### Prerequisites
+### Prerequisites 🔍
 
     - PHP 7.2 
     - Server ready for Laravel environment recommended: [Valet](https://medium.com/ariel-mejia-dev/install-laravel-valet-on-mac-6e5229cba1e)
 
-### Installing
+### Installing ⚙️
 
 ```
 cd chatbot
@@ -23,7 +23,7 @@ php artisan key:generate
 nano .env //edit your file as you want
 ```
 
-## Running the tests
+## Running the tests 🧪
 
 The project goes with test to twitter api and facebook api for the three endpoints.
 
@@ -31,17 +31,17 @@ The project goes with test to twitter api and facebook api for the three endpoin
 vendor/bin/phpunit
 ```
 
-### And coding style
+### And coding style 💻
 
 It is written using PSR-2 and PSR-4 standard.
 
 *the default greeting string is very long, it exceeds the 120 characters for any line limit.
 
-## Deployment
+## Deployment 🚀
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Built With 🛠️
 
 * [Laravel](https://github.com/laravel/laravel) - The web framework used
 * [Composer](https://getcomposer.org/) - Dependency Management
@@ -49,11 +49,11 @@ Add additional notes about how to deploy this on a live system
 * [pimax/fb-messenger] (https://github.com/pimax/fb-messenger-php)
 * [thujohn/twitter] (https://github.com/atymic/twitter)
 
-## Versioning
+## Versioning 🔢
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Authors
+## Authors 🧔
 
 * **Ariel Mejia Dev** - [ArielMejiaDev](https://github.com/ArielMejiaDev)
 
@@ -61,7 +61,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Guide to use Services
+## Guide to use Services 📘
 
 ### TwitterService.php 
 
