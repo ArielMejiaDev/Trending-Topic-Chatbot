@@ -1,78 +1,123 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Trending Topic Chatbot
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Is a facebook chatboot to get the top 10 topics in all cities around the world.
 
-## About Laravel
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+git clone https://github.com/ArielMejiaDev/Trending-Topic-Chatbot.git chatbot
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    - PHP 7.2 
+    - Server ready for Laravel environment recommended: [Valet](https://medium.com/ariel-mejia-dev/install-laravel-valet-on-mac-6e5229cba1e)
 
-## Learning Laravel
+### Installing
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+cd chatbot
+composer install 
+cp .env.example .env 
+php artisan key:generate
+nano .env //edit your file as you want
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Running the tests
 
-## Laravel Sponsors
+The project goes with test to twitter api and facebook api for the three endpoints.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+vendor/bin/phpunit
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### And coding style
 
-## Contributing
+It is written using PSR-2 and PSR-4 standard.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+*the default greeting string is very long, it exceeds the 120 characters for any line limit.
 
-## Code of Conduct
+## Deployment
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Add additional notes about how to deploy this on a live system
 
-## Security Vulnerabilities
+## Built With
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* [Laravel](https://github.com/laravel/laravel) - The web framework used
+* [Composer](https://getcomposer.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [pimax/fb-messenger] (https://github.com/pimax/fb-messenger-php)
+* [thujohn/twitter] (https://github.com/atymic/twitter)
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Ariel Mejia Dev** - [ArielMejiaDev](https://github.com/ArielMejiaDev)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Guide to use Services
+
+### TwitterService.php 
+
+This class is located in the namespace App\Services, it is used to avoid add all twitter api call into a single file,
+it has three methods, two focued on non authenticated methods of twitter API: getAllTrends and getAllEventsByCity
+```
+$trends = (new TwitterApiService)->getAllTrends();
+
+$trendsByCity = (new TwitterApiService)->getTrendsByCity($locationWoeid);
+```
+*the location woeid is provided by twitter api in trends array returned by getAllTrends() method.
+
+This are two wrappers for the api call methods
+
+Maybe you will need to have in a most convinient way a map of cities and woeid so this is the third method
+
+```
+$locations = (new TwitterApiService)->getCitiesMap();
+```
+
+It returns an associative array with all cities and their respective codes.
+
+### FacebookChatbotService 
+
+```
+//start a new instance
+$bot = new FacebookChatbotService();
+
+// set the default fallback message when received a text that does not match with any rule
+// It can received an string with another message
+$bot->setFallbackText();
+
+// set the default greeting message when received a text that does not match with any rule
+// It can received an string with another message
+$bot->setGreetings();
+
+// It can received a string or array of strings as the words to catch in the rule
+// and a callback as a second param to execute whatever you need to add when the text received contains the word searched
+
+$bot->responseTo('help', function() use($bot){
+    $bot->text = 'Hi, How can I help you';
+});
+
+// There could be a situation when the first param is an array of strings 
+// you could need to catch the exactly word that contains the text received
+// in this case you only need to make an array an iterate this
+$cities = ['new york', 'los angeles', 'mexico'];
+
+foreach ($cities as $city) {
+    $bot->responseTo($city, function() use($bot, $city){
+        $bot->text = 'You need data from: ' . ucwords($city);
+    });
+}
+
+//finally to send the response you just need to add the method send
+$bot->send();
+```
+
+This api service was added to handle only the text messages situation, but the pixma fb-messenger API provides more UI posibilities (the natively from facebook), so you can extend the send(), to your situation.
